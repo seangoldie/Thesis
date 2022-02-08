@@ -5,10 +5,6 @@ import pandas as pd
 
 def load_the_data(data_pathway, labels_pathway):
 
-    ''' Current problem: 
-    
-    Number of deleted samples: 21085 (all of them)
-    '''
     data_folder = os.listdir(data_pathway)
     labels_folder = os.listdir(labels_pathway)
 
@@ -16,7 +12,7 @@ def load_the_data(data_pathway, labels_pathway):
     
     data = np.empty((length, 128, 640, 1)) # Cropped from 128 by 1280
     labels = np.empty((length, 161))
-    deletes = list() # Keep track of which relevant indices generated errors and remove them from the arrays
+    deletes = list()
     filenames = list()
 
     for i in range(length):
